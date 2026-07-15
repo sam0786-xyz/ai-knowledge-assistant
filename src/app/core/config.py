@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     api_prefix: str = "/api/v1"
 
     # Database
-    database_url: str
+    database_url: str | None = None
 
     # LLM
     default_llm: str = "gemini"
