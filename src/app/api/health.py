@@ -1,0 +1,14 @@
+from fastapi import APIRouter
+
+from app.core.config import settings
+
+router = APIRouter(prefix="/users", tags=["users"])
+
+
+@router.get("/health")
+def health() -> dict:
+    return {
+        "status": "healthy",
+        "application": settings.app_name,
+        "version": settings.app_version,
+    }
