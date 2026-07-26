@@ -9,7 +9,7 @@ class DocumentService:
     def __init__(self, storage: LocalStorage):
         self.storage = storage
 
-    def upload_document(self, filename: str, content: bytes) -> DocumentUploadResponse:
+    def upload(self, filename: str, content: bytes) -> DocumentUploadResponse:
         original_path = Path(filename)
         extension = original_path.suffix
         document_id = uuid4()
