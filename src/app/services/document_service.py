@@ -10,6 +10,7 @@ class DocumentService:
         self.storage = storage
 
     def upload(self, filename: str, content: bytes) -> DocumentUploadResponse:
+        """Uploads a document to the local storage."""
         original_path = Path(filename)
         extension = original_path.suffix
         document_id = uuid4()
