@@ -14,8 +14,8 @@ class DocumentService:
         original_path = Path(filename)
         extension = original_path.suffix
         document_id = uuid4()
-        new_filename = f"{document_id}{extension}"
-        self.storage.save(new_filename, content)
+        storage_filename = f"{document_id}{extension}"
+        self.storage.save(storage_filename, content)
         return DocumentUploadResponse(
             document_id=document_id, filename=filename, status="uploaded"
         )
