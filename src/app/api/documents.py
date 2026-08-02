@@ -26,12 +26,9 @@ async def upload(
             detail="Only PDF files are supported.",
         )
 
-    filename = file.filename
     content = await file.read()
 
-    response = service.upload(
-        filename=filename,
+    return service.upload(
+        filename=file.filename,
         content=content,
     )
-
-    return response
